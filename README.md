@@ -49,9 +49,12 @@ This is a basic guide for using Halo: Combat Evolved mod tools along with some u
 
 
 ### Tutorials
-I got most of this info from the writeup [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) on Steam forums.
 
-Here's a [good video tutorial](https://www.youtube.com/watch?v=68C5Y9WEPUE) from Youtube.
+* Most info here comes from [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) on Steam forums.
+* A [good video tutorial](https://www.youtube.com/watch?v=68C5Y9WEPUE) from Youtube that I followed.
+* The "official" halo modding wiki site: [c20.reclaimers.net](https://c20.reclaimers.net/h1/tags/) - linked is their guide to tags.
+
+
 
 
 ## Building the map and applying to the game
