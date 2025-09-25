@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 REM take in parameters moddedScenarioPath and originalMapName
 set moddedScenarioPath=%1
@@ -11,7 +11,7 @@ if "%moddedScenarioPath%"=="" (
 )
 REM if moddedScenarioPath does not exist, throw error
 if not exist "%~dp0..\modtools\tags\%moddedScenarioPath%.scenario" (
-    echo "Error: The specified moddedScenarioPath does not exist: %~dp0..\modtools\%moddedScenarioPath%.scenario"
+    echo "Error: The specified moddedScenarioPath does not exist: %~dp0..\modtools\tags\%moddedScenarioPath%.scenario"
     exit /b 1
 )
 

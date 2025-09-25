@@ -1,3 +1,5 @@
+@echo off
+
 REM check if symlinks already exist
 if exist "%~dp0..\modtools" (
     rmdir "%~dp0..\modtools"
