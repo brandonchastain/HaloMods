@@ -11,7 +11,7 @@ This is a basic guide for using Halo: Combat Evolved mod tools along with some u
 ## Setup
 1. Install Halo MCC including Halo CE on steam.
 2. Install [Halo CE mod tools](https://steamcommunity.com/games/976730/announcements/detail/3007823106801144959) on steam.
-3. Download the `scripts/` folder
+3. Download the `CE/scripts/` folder above.
 2. Run `scripts\Setup.bat` to initialize. It will ask for your modtools directory and halo1 game directory.
 3. Run `scripts\BackupHaloMaps.bat` to backup the original maps to the local folder /maps_backup/.
 
