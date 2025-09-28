@@ -6,17 +6,36 @@ Author: Brandon Chastain
 This is a basic guide for using Halo: Combat Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
 
 
-# Combat Evolved
+## How to use these scripts
 
-## Setup
+### Setup
 1. Install Halo MCC including Halo CE on steam.
 2. Install [Halo CE mod tools](https://steamcommunity.com/games/976730/announcements/detail/3007823106801144959) on steam.
 3. Download the `CE/scripts/` folder above.
 2. Run `scripts\Setup.bat` to initialize. It will ask for your modtools directory and halo1 game directory.
 3. Run `scripts\BackupHaloMaps.bat` to backup the original maps to the local folder /maps_backup/.
 
+> WARNING: To prevent unexpected data loss, __NEVER__ delete the `gameConfig\` and `modtools\` folders that are created by Setup.bat. Instead, use the below cleanup script to delete them safely.
 
-## Modding concepts
+### How to create a new level
+1. Create the level in blender, export as JSM file to `modtools\data\levels\...\yourlevel\models` folder.
+2. Run `GenerateScenarioFromJSM.bat levels\...\yourlevel` (referencing the level's path under `data\` which contains the `models` folder) to generate the file `yourlevel.scenario` under `tags\levels\yourlevel`.
+
+### How to add objects and customize levels
+1. Populate the level using Sapien to place objects.
+2. Adjust any tags using Guerilla.
+
+### Building the map and applying to the game
+1. Run `ApplyHaloScenario levels\...\yourlevel\yourlevel beavercreek` to override the battle creek map with the modded one.
+2. You can now play on the map. Open MCC with anti-cheat disabled, play the map on customs.
+3. You can restore the maps to their original backup after quitting the game and running `RestoreHaloMaps.bat`.
+
+### Cleanup generated files
+You can cleanup all the generated symlinks using `Cleanup.bat`.
+
+# Modding Tips
+
+## Concepts/Definitions
 | Concept | What is it? |
 |---|---|
 | Tags | Mostly everything, like a weapon, or enemy, or tree, is a tag *** to be learned / documented *** |
@@ -48,43 +67,9 @@ This is a basic guide for using Halo: Combat Evolved mod tools along with some u
 4. Save the scenario file.
 
 
-### Tutorials
+## Other Modding Tutorials
 
 * Most info here comes from [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) on Steam forums.
 * A [good video tutorial](https://www.youtube.com/watch?v=68C5Y9WEPUE) from Youtube that I followed.
 * The "official" halo modding wiki site: [c20.reclaimers.net](https://c20.reclaimers.net/h1/tags/) - linked is their guide to tags.
-
-
-
-
-## Building the map and applying to the game
-1. Run `ApplyHaloScenario.bat "path\to\level" originalMapName`. Example: `ApplyHaloScenario.bat "levels\test\bloodgulch\bloodgulch_moddedByMe" bloodgulch`, which generates the map in modtools\maps and copies that to your MCC folder.
-2. You can now play on the map. Open MCC with anti-cheat disabled, play the map on customs.
-3. You can restore the maps to their original backup after quitting the game and running `RestoreHaloMaps.bat`.
-
-## Cleanup generated files
-WARNING: be careful deleting the gameConfig and modtools folders. Let this cleanup script handle it to avoid accidentally deleting your game or tools.
-You can cleanup all the generated symlinks using `Cleanup.bat`.
-
-
-# Other tips & tricks
-
-
-## Update map lighting after changing the skybox
-After changing the skybox for a scenario using Guerilla,
-you can update its lighting in Sapien.
-
-Save it in Guerilla, open it in Sapien, then trigger the cmd prompt by pressing ~.
-
-Enter this command:
-```
-radiosity_start
-```
-
-Wait a few seconds, all 3 numbers at the top left should reach zero and stop changing. Then you can run this command to apply the change:
-
-```
-radiosity_save
-```
-
-Then, save the scenario file and compile the map like usual.
+* [Creating your first level](https://c20.reclaimers.net/h1/guides/levels/box-level/)
