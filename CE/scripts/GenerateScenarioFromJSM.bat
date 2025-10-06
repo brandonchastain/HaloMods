@@ -22,5 +22,5 @@ if "%scenarioName%"=="" (
 
 pushd ..\modtools
 .\tool.exe structure "%dataPath%" %scenarioName%
-.\tool.exe lightmaps "%dataPath%\%scenarioName%" %scenarioName% 0 0.3
+.\tool.exe lightmaps "%dataPath%\%scenarioName%" %scenarioName% 0 1
 popd
