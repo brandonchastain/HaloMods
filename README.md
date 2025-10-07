@@ -90,6 +90,8 @@ The advanced tutorial on reclaimers has info on this, but it has an incorrect st
 
 
 ## Merging structures into level geometry in blender (fixed)
+FIRST, apply all transforms to the structure/object. In Object mode, select the object and go to Object -> Apply -> All Transforms.
+
 Follow the advanced tutorial to apply the Union modifier to the Level object (with the base/structure).
 
 When applying the Union modifier, select Material: Transfer to keep identitifying materials on a base.
@@ -107,5 +109,6 @@ Check for non-manifold edges. From edge edit mode, click Select -> All by trait 
 
 If there are non-manifold edges, connect them (if it's obvious). 
 If it's not obvious, it could be a duplicated face/object.
+Check the specific error given by Tool.exe and look it up on the BSP troubleshooting guide.
 
 Once you've cleaned up the non-manifold edges, you can separate the structure again by highlighting all the structure faces and pressing P, S to separate it into a different object.
