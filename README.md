@@ -106,8 +106,8 @@ Now, select all the level faces that touch the structure. Press X, L to trigger 
 
 Check for non-manifold edges. From edge edit mode, click Select -> All by trait -> Non-manifold. There shouldn't be any non-manifold edges in your structure (except for render-only edges like ladders, teleporters, streams).
 
-
-If there are non-manifold edges, connect them (if it's obvious). 
+If there are non-manifold edges, connect them (if it's obviously disconnected).
+Check the normal face (enable backface culling on the material for an easier way to tell). These must be correct for the edges to be manifold.
 If it's not obvious, it could be a duplicated face/object.
 Check the specific error given by Tool.exe and look it up on the BSP troubleshooting guide.
 
