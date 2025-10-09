@@ -87,7 +87,7 @@ After modeling a new base or anything else that will be attached to the `level` 
 so that your level follows the "sealed world" rules.
 
 The advanced tutorial on reclaimers has info on this, but it has an incorrect step. 
-
+> TIP: Move blender camera with mouse-wheel and use SHIFT+` (~) to use free walk (WASD) mode. Look around by moving the mouse.
 
 ## Merging structures into level geometry in blender (fixed)
 FIRST, apply all transforms to the structure/object. In Object mode, select the object and go to Object -> Apply -> All Transforms.
@@ -112,3 +112,10 @@ If it's not obvious, it could be a duplicated face/object.
 Check the specific error given by Tool.exe and look it up on the BSP troubleshooting guide.
 
 Once you've cleaned up the non-manifold edges, you can separate the structure again by highlighting all the structure faces and pressing P, S to separate it into a different object.
+
+## BSP troubleshooting cheat sheet
+| Tool.exe error | Meaning | Fix |
+|--|--|--|
+| Degenerate triangle | There is a triangle with 0 area somewhere. | Find the bad edge. It might have 3 colinear vertices, which is invalid. If so, try merging the vertices. Otherwise, there could be multiple edges in the same spot, so try dissolving the bad edge (try this multiple times until the edge disappears and then reappears). If that doesn't work, there could be multiple overlapping edges with different sizes, in which case you can subdivide the largest edge, and then merge vertices to get the min number of edges needed.|
+| Open edge | There is a hole in the level, like a hole in a balloon, but it should be sealed. | Find the bad edge. Use F to fill the face and double-check that the face's normal is flipped correctly with Alt+N , F.| 
+| Couldn't update edge | There is an edge adjacent to 3 faces somewhere. | Alter the model so each edge is adjacent to 2 faces. | 
