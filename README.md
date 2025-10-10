@@ -114,6 +114,9 @@ Check the specific error given by Tool.exe and look it up on the BSP troubleshoo
 Once you've cleaned up the non-manifold edges, you can separate the structure again by highlighting all the structure faces and pressing P, S to separate it into a different object.
 
 ## BSP troubleshooting cheat sheet
+
+More troubleshooting steps are listed on this [Halo Maps Forum post](https://forum.halomaps.org/indexf7b6.html).
+
 | Tool.exe error | Meaning | Fix |
 |--|--|--|
 | Degenerate triangle | There is a triangle with 0 area somewhere. | Find the bad edge. It might have 3 colinear vertices, which is invalid. If so, try merging the vertices. Otherwise, there could be multiple edges in the same spot, so try dissolving the bad edge (try this multiple times until the edge disappears and then reappears). If that doesn't work, there could be multiple overlapping edges with different sizes, in which case you can subdivide the largest edge, and then merge vertices to get the min number of edges needed.|
