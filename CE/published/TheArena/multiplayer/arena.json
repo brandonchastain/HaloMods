@@ -1,0 +1,72 @@
+{
+	"MapGuid": "ecfcd139-5a0a-45e6-a817-2780754a3a98",
+	"ScenarioFile": "arena",
+	"Title": {
+		"Neutral": "TheArena"
+	},
+	"Description": {
+		"Neutral": "TheArena"
+	},
+	"Images": {
+		"Large": "",
+		"Thumbnail": "",
+		"LoadingScreen": "",
+		"TopDown": ""
+	},
+	"Flags": [
+		"DisableSavedFilms"
+	],
+	"InsertionPoints": [],
+	"MaximumTeamsByGameCategory": {
+		"GameCategory_CTF": 2,
+		"GameCategory_Slayer": 2,
+		"GameCategory_Oddball": 2,
+		"GameCategory_KOTH": 2,
+		"GameCategory_Race": 2
+	},
+	"WeaponSets": {
+		"_game_engine_weapons_heavy": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_rocket_launcher"
+		},
+		"_game_engine_weapons_shotguns": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_shotgun"
+		},
+		"_game_engine_weapons_assault_rifles": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_normal": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_pistols": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_magnum_pistol"
+		},
+		"_game_engine_weapons_no_sniping": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_sniping": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_sniper_rifle"
+		},
+		"_game_engine_weapons_plasma_weapons": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_plasma_rifle"
+		},
+		"_game_engine_weapons_rocket_launchers": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_rocket_launcher"
+		},
+		"_game_engine_weapons_short_range": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_human": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_covenant": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_plasma_rifle"
+		},
+		"_game_engine_weapons_classic": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		},
+		"_game_engine_weapons_no_grenades": {
+			"PrimaryStartingWeapon": "_damage_reporting_type_assault_rifle"
+		}
+	},
+	"MapDefaultPrimaryWeaponForge": "_damage_reporting_type_invalid"
+}

@@ -122,3 +122,11 @@ More troubleshooting steps are listed on this [Halo Maps Forum post](https://for
 | Degenerate triangle | There is a triangle with 0 area somewhere. | Find the bad edge. It might have 3 colinear vertices, which is invalid. If so, try merging the vertices. Otherwise, there could be multiple edges in the same spot, so try dissolving the bad edge (try this multiple times until the edge disappears and then reappears). If that doesn't work, there could be multiple overlapping edges with different sizes, in which case you can subdivide the largest edge, and then merge vertices to get the min number of edges needed.|
 | Open edge | There is a hole in the level, like a hole in a balloon, but it should be sealed. | Find the bad edge. Use F to fill the face and double-check that the face's normal is flipped correctly with Alt+N , F.| 
 | Couldn't update edge | There is an edge adjacent to 3 faces somewhere. | Alter the model so each edge is adjacent to 2 faces. | 
+
+
+# Publishing a mod
+1. Create a folder under /published/ with the mod name.
+2. Create folders for /images/, /multiplayer/, and /maps/
+3. Copy the modded .map file into /maps/
+4. Open Excission (mod upload tool), make sure you add the  /published/ folder under configuration.
+5. Use Excission to create the new mod entry, add the map to it, and upload.

@@ -1,0 +1,44 @@
+{
+	"ModIdentifier": {
+		"ModGuid": "29acb21e-7c28-4a13-8101-a7f08cdcd931",
+		"HostedModIds": {
+			"SteamWorkshopId": 3585293720
+		}
+	},
+	"ModVersion": {
+		"Major": 0,
+		"Minor": 0,
+		"Patch": 1
+	},
+	"MinAppVersion": {
+		"Major": 1,
+		"Minor": 3385,
+		"Patch": 0
+	},
+	"MaxAppVersion": {
+		"Major": 1,
+		"Minor": 3528,
+		"Patch": 0
+	},
+	"Engine": "Halo1",
+	"Title": {
+		"Neutral": "TheArena"
+	},
+	"Description": {
+		"Neutral": "TheArena"
+	},
+	"InheritSharedFiles": "FromMCC",
+	"ModContents": {
+		"HasBackgroundVideos": false,
+		"HasNameplates": false
+	},
+	"GameModContents": {
+		"HasSharedFiles": false,
+		"HasCampaign": false,
+		"HasSpartanOps": false,
+		"HasController": false,
+		"MultiplayerMaps": [
+			"multiplayer/arena.json"
+		]
+	}
+}
