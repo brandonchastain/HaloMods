@@ -86,7 +86,7 @@ When you're satisfied with your testing, compile a map file for the real game to
 
 > Note: BEFORE doing this, make sure you have backed up your MCC maps using .\BackupHaloMaps.bat. You'll need to restore them to play matchmaking.
 
-1. Run `ApplyHaloScenario levels\test\yourlevel\yourlevel beavercreek` to override the battle creek map with your modded map. You can now play on the map. 
+1. Run `ApplyMap.bat levels\test\yourlevel\yourlevel beavercreek` to override the battle creek map with your modded map. You can now play on the map. 
 2. Open MCC __with anti-cheat disabled__ to play the map on customs (only matters for host).
 3. You can restore the maps to their origsinal backup after quitting the game and running `RestoreHaloMaps.bat`.
 4. Make sure to restore maps before playing with anti-cheat enabled.
