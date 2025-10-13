@@ -1,3 +1,0 @@
-                                  header,              (null),      8240
-rasterizer model ambient reflection tint,              (null),        16
-                     screen effect filth,              (null),       120
