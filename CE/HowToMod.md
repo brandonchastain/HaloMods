@@ -8,49 +8,92 @@ This is a basic guide for using Halo: Combat Evolved mod tools along with some u
 
 1. Halo MCC with Combat Evolved from Steam
 2. Halo MCC CE mod tools from Steam
-3. Blender
-4. GIMP/Krita
+3. (Optional) Blender for modeling 3D assets
+4. (Optional) Krita / Photoshop for editing textures
 
 
-## Other Tutorials
-* Reclaimers wiki: [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/)
-* Steam forum post: [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) on Steam forums.
-* A [good video tutorial](https://www.youtube.com/watch?v=68C5Y9WEPUE) from Youtube that I followed.
+## Supplemental Tutorials
+
+I'm trying to make this guide easy to understand. However, it is by no means a complete guide. I recommend checking out these resources for more details whenever needed:
+
+* [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/) (reclaimers.net)
+* [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) (steamcommunity.com)
+* Videos from YouTube channel **Halo: Combat Eclipsed** like [this one on spawning AI characters](https://www.youtube.com/watch?v=bs0h4vaCd-k) (youtube.com)
+
+---
+## Halo Modding 101: Introduction to Concepts
 
 
-## Concepts/Definitions
+### Tags
 
-| Concept | What is it? |
-|---|---|
-| Tags | Mostly everything, like a weapon, or enemy, or tree, is a tag *** to be learned / documented *** |
-| .scenario files | Basically a level file that you can edit. Each one gets compiled into a map. |
-| HSC scripts | Behavioral script customizations. *** to be learned / documented *** |
+* A "tag" is just a file with some settings inside that affect what the Halo game engine executes.
+* This is our main interface for customizing Halo behavior.
+* There are tags for most "things" in Halo, including scenarios, weapons, items, scenery, allies/enemies, and more.
+* You can edit all tags with Guerilla.exe.
+* All the existing tags can be found in `modtools\tags\`.
 
 
-## How to mod Halo: Combat Evolved
+### .scenario tag files
+
+* The tag file for a level, including its vehicles, scenery, items, AI/chars, etc. 
+* You can edit a .scenario file using `modtools\sapien.exe`.
+* All the existing .scenario tags can be found in `modtools\tags\levels\`. MP maps are under `modtools\tags\levels\test\`.
+* You can quickly test your .scenario files as you edit them using `modtools\halo_tag_test.exe`.
+
+
+### HSC scripts
+* A .scenario file can also include some HaloScript scripts. 
+* These scripts are used for spawning AI encounters, among other things.
+* All the existing scripts can be found in `modtools\data\levels\*\scripts\`. They all have the file extension `.hsc`.
+
+
+### Guerilla.exe
+
+* Halo CE tag editor - edit attributes for any entity in a level.
+
+### Sapien.exe
+
+* Halo CE scenario editor - place new objects/enemies, change scenery, move things around in a level.
+
+> TIP: To move the camera in Sapien, you must click and hold your middle mouse button first. Then you can move with WASD or drag the mouse to look around. Also, R=go Up, F=go Down.
+
+
+---
+## Halo Modding 201: Modding & testing a level
 
 ### Setup
 
-1. Install Halo MCC including Halo CE on steam.
-2. Install [Halo CE mod tools](https://steamcommunity.com/games/976730/announcements/detail/3007823106801144959) on steam.
-3. Download the `CE/scripts/` folder above.
-4. Run `scripts\Setup.bat` to initialize. It will ask for your modtools directory and halo1 game directory.
-5. Run `scripts\BackupHaloMaps.bat` to backup the original maps to the local folder /maps_backup/.
+1. Clone this repo or download it from this page. 
+2. Open cmd or Powershell. Navigate to the downloaded scripts folder using `cd`. 
+3. Run `Setup.bat` to initialize. It will ask for your modtools directory and halo1 game directory.
+4. Run `BackupHaloMaps.bat` to backup the original maps to the local folder /maps_backup/.
+
+```bat
+cd Downloads\HaloMods\scripts
+.\Setup.bat ...
+.\BackupHaloMaps.bat ...
+```
 
 > WARNING: To prevent unexpected data loss, __NEVER__ delete the `gameConfig\` and `modtools\` folders that are created by Setup.bat. Instead, use the cleanup script mentioned below to delete them safely.
 
 
-### 1. Create a new level (optional)
+### 1. Create a new level or find one to modify
 
-You can skip this section if you want to mod an existing level's geometry.
 
-1. Create the level in blender. 
-2. Export as JSM file to `modtools\data\levels\test\yourlevel\models` folder.
-3. Run `GenerateScenarioFromJSM.bat levels\test\yourlevel` (referencing the path above) to generate the scenario tag file  `modtools\tags\levels\test\yourlevel\yourlevel.scenario`.
+#### Option A - Find an existing level
+1. Browse your Halo CE mod tool files for an existing .scenario tag to focus on. You can find them in the folder: `modtools\tags\levels\`. 
+2. Once you find a scenario you want to edit, you can move on to the next step.
+
+#### Option B - Create a new level (requires Blender)
+
+1. Create a model for the level in Blender.  (see [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/))
+2. Export the model as a JSM file to `modtools\data\levels\test\yourlevel\models` folder.
+3. Run `GenerateScenario.bat levels\test\yourlevel` to generate a scenario tag from your model. The generated scenario will be stored at  `modtools\tags\levels\test\yourlevel\yourlevel.scenario`. 
 4. If there are console errors, check the BSP troubleshooting section below. Otherwise you should now have a scenario file.
 
 
-### 2. Add spawn points, objects, and other customizations to a level
+
+### 2. Customize spawn points, objects, vehicles, weapons, etc, in a level
 
 1. Open `modtools\sapien.exe` and open the scenario you want to edit, e.g. `modtools\tags\levels\test\beavercreek\beavercreek.scenario`
 1. For new levels only, place 3 spawn points minimum for testing:
@@ -74,15 +117,18 @@ map_name levels\test\yourlevel\yourlevel
 4. Have fun running around and testing your mods.
 
 
-### 5. Build the map file
+---
+## Halo Modding 301: Testing your mod on MCC
 
-When you're satisfied with your testing, compile a map file for the real game to use.
+### 1. Build the map file
+
+When you're satisfied with your halo_tag_test.exe testing, compile a map file for the real game to use.
 
 1. Run `BuildMap.bat levels\test\yourlevel\yourlevel`, providing the path to your modded scenario (without the file extension).
 2. The compiled .map file will be generated in `modtools\maps`.
 
 
-### 6. Apply a map to MCC (*note the risks)
+### 2. Apply a map to MCC (*note the risks)
 
 > Note: BEFORE doing this, make sure you have backed up your MCC maps using .\BackupHaloMaps.bat. You'll need to restore them to play matchmaking.
 
@@ -94,45 +140,40 @@ When you're satisfied with your testing, compile a map file for the real game to
 > Note: ALWAYS disable anti-cheat when testing your mods in MCC! If you get banned it's not my fault!
 
 
-### 7. Publish the mod
+---
+## Halo Modding 401: Publishing your mod to Steam Workshop
 
 1. Create a folder under /published/ with the mod name.
 2. Create folders for /images/, /multiplayer/, and /maps/
-3. Copy the modded .map file into /maps/
+3. Copy your modded .map file from `\modtools\maps\` into the new `/published/maps/` folder.
 4. Open Excission (mod upload tool), make sure you add the  /published/ folder under configuration.
 5. Use Excission to create the new mod entry, add the map to it, and upload.
-
-
-# Primary modding tools
-
-| Tool name | What it does |
-|---|---|
-| Blender | 3d modeler - create level geometry (BSPs) by designing your own level from scratch.|
-| Sapien.exe | Level editor - place new objects/enemies, change scenery, move things around in a level |
-| Guerilla.exe | Tag editor - edit attributes for entities in a level |
-| Tool.exe | A generic command-line tool for various modding tasks (e.g. compiling maps). |
-
-
-## How to use Sapien
-
-1. Open modtools/sapien.exe.
-2. Open any scenario file (inside modtools/tags/levels) for the desired level. (MP levels are under levels/test folder).
-3. Edit the map units, vehicles, weapons, scenery, etc.
-
-> TIP: A mouse is required for Sapien. To move the camera, you must click and hold your middle mouse button first. Then you can move with WASD or drag the mouse to look around. Also, R=go Up, F=go Down.
-
-
-## How to use Guerilla
-
-1. Open modtools/guerilla.exe
-2. Open the scenario file for the desired level. (inside modtools/tags/levels. MP levels are under /test/).
-3. Adjust tag settings
-4. Save the scenario file.
+6. You should see the mod in Steam Workshop now. It will be private by default and only visible by you.
 
 
 ## Notes for modeling levels in Blender
 
 > TIP: Move blender camera with SHIFT+` (~) to use free walk (WASD) mode. Look around by moving the mouse.
+
+
+### Importing original BSP models and textures
+
+Get blender assets here on [g drive](https://drive.google.com/drive/folders/1E9S4sesK9B_6AHdLRfhzXw_lNQQvMqic)
+1. Import the obj w/materials file into blender. Apply scaling options in the Import Dialog to fix the size of the level.
+2. Add a frame, parent the frame over the imported structure.
+3. You may need to rename materials inside the .blend file to match the shader name. (add ! for transparency, %^ for ladders, etc).
+
+
+### BSP troubleshooting cheat sheet
+
+More troubleshooting steps are listed on this [Halo Maps Forum post](https://forum.halomaps.org/indexf7b6.html).
+
+| Tool.exe error | Meaning | Fix |
+|--|--|--|
+| Degenerate triangle | There is a triangle with 0 area somewhere. | Find the bad edge. It might have 3 colinear vertices, which is invalid. If so, try merging the vertices. Otherwise, there could be multiple edges in the same spot, so try dissolving the bad edge (try this multiple times until the edge disappears and then reappears). If that doesn't work, there could be multiple overlapping edges with different sizes, in which case you can subdivide the largest edge, and then merge vertices to get the min number of edges needed.|
+| Open edge | There is a hole in the level, like a hole in a balloon, but it should be sealed. | Find the bad edge. Use F to fill the face and double-check that the face's normal is flipped correctly with Alt+N , F.| 
+| Couldn't update edge | There is an edge adjacent to 3 faces somewhere. | Alter the model so each edge is adjacent to 2 faces. | 
+
 
 ### Merging structures into level geometry in blender (fixed)
 
@@ -162,23 +203,4 @@ If it's not obvious, it could be a duplicated face/object.
 Check the specific error given by Tool.exe and look it up on the BSP troubleshooting guide.
 
 Once you've cleaned up the non-manifold edges, you can separate the structure again by highlighting all the structure faces and pressing P, S to separate it into a different object.
-
-
-### BSP troubleshooting cheat sheet
-
-More troubleshooting steps are listed on this [Halo Maps Forum post](https://forum.halomaps.org/indexf7b6.html).
-
-| Tool.exe error | Meaning | Fix |
-|--|--|--|
-| Degenerate triangle | There is a triangle with 0 area somewhere. | Find the bad edge. It might have 3 colinear vertices, which is invalid. If so, try merging the vertices. Otherwise, there could be multiple edges in the same spot, so try dissolving the bad edge (try this multiple times until the edge disappears and then reappears). If that doesn't work, there could be multiple overlapping edges with different sizes, in which case you can subdivide the largest edge, and then merge vertices to get the min number of edges needed.|
-| Open edge | There is a hole in the level, like a hole in a balloon, but it should be sealed. | Find the bad edge. Use F to fill the face and double-check that the face's normal is flipped correctly with Alt+N , F.| 
-| Couldn't update edge | There is an edge adjacent to 3 faces somewhere. | Alter the model so each edge is adjacent to 2 faces. | 
-
-
-### Finding original BSP models and textures
-
-Get blender assets here on [g drive](https://drive.google.com/drive/folders/1E9S4sesK9B_6AHdLRfhzXw_lNQQvMqic)
-1. Import obj file into blender. Apply scaling to fix the size of the level.
-2. Add a frame, parent the frame over the imported structure.
-3. You may need to rename materials inside the .blend file to match the shader name. (add ! for transparency, %^ for ladders, etc).
 

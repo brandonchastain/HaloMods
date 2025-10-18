@@ -17,11 +17,11 @@ A small suite of scripts to help Halo modders work quickly and stay organized.
 |Script|Description|
 |---|---|
 |Setup.bat|Initializes the shortcuts for your modtools and official Halo install folders.|
+|GenerateScenario.bat|Generates a scenario tag from an exported blender model with tool.exe and runs lightmaps on it.|
 |BackupHaloMaps.bat|Copies the official halo maps so that they can be restored later.|
-|GenerateScenario.bat|Generates a scenario tag from an exported blender model with tool.exe|
+|RestoreHaloMaps.bat|Restores the maps from the backup.|
 |BuildHaloMap.bat|Compiles a scenario tag into a map cache file using tool.exe|
 |ApplyHaloMap.bat|Applies a map to the official game folder.|
-|RestoreHaloMaps.bat|Restores the maps from the backup.|
 |Cleanup.bat|Uninstalls the shortcuts that were created.|
 
 ## How to Use
