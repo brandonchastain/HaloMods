@@ -1,12 +1,12 @@
 # Halo CE Modding Guide
 
 
-This is a basic guide for using Halo: Combat Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
+This is a basic guide for using Halo: Comps1 Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
 
 
 ## Tools you'll need
 
-1. Halo MCC with Combat Evolved from Steam
+1. Halo MCC with Comps1 Evolved from Steam
 2. Halo MCC CE mod tools from Steam
 3. (Optional) Blender for modeling 3D assets
 4. (Optional) Krita / Photoshop for editing textures
@@ -18,7 +18,7 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 * [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/) (reclaimers.net)
 * [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) (steamcommunity.com)
-* Videos from YouTube channel **Halo: Combat Eclipsed** like [this one on spawning AI characters](https://www.youtube.com/watch?v=bs0h4vaCd-k) (youtube.com)
+* Videos from YouTube channel **Halo: Comps1 Eclipsed** like [this one on spawning AI characters](https://www.youtube.com/watch?v=bs0h4vaCd-k) (youtube.com)
 
 ---
 ## Halo Modding 101: Introduction to Concepts
@@ -65,16 +65,19 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 1. Clone this repo or download it from this page. 
 2. Open cmd or Powershell. Navigate to the downloaded scripts folder using `cd`. 
-3. Run `Setup.bat` to initialize. It will ask for your modtools directory and halo1 game directory.
-4. Run `BackupHaloMaps.bat` to backup the original maps to the local folder /maps_backup/.
+3. Run `Setup.ps1` to initialize. It will ask for your modtools directory and halo1 game directory.
 
-```bat
+```ps1
 cd Downloads\HaloMods\scripts
-.\Setup.bat ...
-.\BackupHaloMaps.bat ...
+.\Setup.ps1 ...
 ```
 
-> WARNING: To prevent unexpected data loss, __NEVER__ delete the `gameConfig\` and `modtools\` folders that are created by Setup.bat. Instead, use the cleanup script mentioned below to delete them safely.
+4. Shortcuts for Halo CE mod tools `guerilla.exe`, `sapien.exe`, and `halo_tag_test.exe` will be created under the HaloMods/ folder for easy access.
+Also, the following directories will be added to the `HaloMods\CE` folder:
+* `modtools\` - a symlink to HCEEK folder
+* `gameConfig\` - a symlink to halo1 folder under steam
+
+> WARNING: To prevent unexpected data loss, __NEVER__ delete the `gameConfig\` and `modtools\` folders that are created by Setup.ps1. Instead, use the cleanup script mentioned below to delete them safely.
 
 
 ### 1. Create a new level or find one to modify
@@ -88,14 +91,14 @@ cd Downloads\HaloMods\scripts
 
 1. Create a model for the level in Blender.  (see [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/))
 2. Export the model as a JSM file to `modtools\data\levels\test\yourlevel\models` folder.
-3. Run `GenerateScenario.bat levels\test\yourlevel` to generate a scenario tag from your model. The generated scenario will be stored at  `modtools\tags\levels\test\yourlevel\yourlevel.scenario`. 
+3. Run `GenerateScenario.ps1 levels\test\yourlevel` to generate a scenario tag from your model. The generated scenario will be stored at  `modtools\tags\levels\test\yourlevel\yourlevel.scenario`. 
 4. If there are console errors, check the BSP troubleshooting section below. Otherwise you should now have a scenario file.
 
 
 
 ### 2. Customize spawn points, objects, vehicles, weapons, etc, in a level
 
-1. Open `modtools\sapien.exe` and open the scenario you want to edit, e.g. `modtools\tags\levels\test\beavercreek\beavercreek.scenario`
+1. Open the `sapien.exe` shortcut from your `HaloMods` folder and open the scenario you want to edit, e.g. `modtools\tags\levels\test\beavercreek\beavercreek.scenario`
 1. For new levels only, place 3 spawn points minimum for testing:
 * Single Player spawn points should have default spawn point settings
 * Multiplayer spawn points need to be enabled for `all games` and be given team index 0 or 1.
@@ -105,9 +108,10 @@ cd Downloads\HaloMods\scripts
 
 ### 3. Test your modded map with tag test
 
-1. Open `halo_tag_test.exe` from your `modtools/` folder.
+1. Open the `halo_tag_test.exe` shortcut from your `HaloMods` folder.
 2. Press `~` to open the dev console
 3. Run these commands to set gametype to slayer and load your modded scenario (without the .scenario extension):
+Alternatively, you can edit the file at `modtools\init.txt` to include these lines:
 
 ```
 game_variant slayer
@@ -124,18 +128,17 @@ map_name levels\test\yourlevel\yourlevel
 
 When you're satisfied with your halo_tag_test.exe testing, compile a map file for the real game to use.
 
-1. Run `BuildMap.bat levels\test\yourlevel\yourlevel`, providing the path to your modded scenario (without the file extension).
+1. Run `BuildMap.ps1 levels\test\yourlevel\yourlevel`, providing the path to your modded scenario (without the file extension).
 2. The compiled .map file will be generated in `modtools\maps`.
 
 
 ### 2. Apply a map to MCC (*note the risks)
 
-> Note: BEFORE doing this, make sure you have backed up your MCC maps using .\BackupHaloMaps.bat. You'll need to restore them to play matchmaking.
+> Note: BEFORE doing this, the script will back up your MCC maps using .\BackupMaps.ps1. You'll need to restore them before you jump back in to matchmaking.
 
-1. Run `ApplyMap.bat levels\test\yourlevel\yourlevel beavercreek` to override the battle creek map with your modded map. You can now play on the map. 
+1. Run `ApplyMap.ps1 levels\test\yourlevel\yourlevel beavercreek` to override the ps1tle creek map with your modded map. You can now play on the map. 
 2. Open MCC __with anti-cheat disabled__ to play the map on customs (only matters for host).
-3. You can restore the maps to their origsinal backup after quitting the game and running `RestoreHaloMaps.bat`.
-4. Make sure to restore maps before playing with anti-cheat enabled.
+3. You can restore the maps to their original state by running `RestoreMaps.ps1`. Make sure to do this before playing the game with anti-cheat enabled.
 
 > Note: ALWAYS disable anti-cheat when testing your mods in MCC! If you get banned it's not my fault!
 

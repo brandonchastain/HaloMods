@@ -1,0 +1,12 @@
+{
+	"CampaignGuid": "c7fe53d4-637b-4863-ace3-a56154283ec1",
+	"Title": {
+		"Neutral": "Snakepit"
+	},
+	"Description": {
+		"Neutral": "Arcade-style shooting range"
+	},
+	"CampaignMaps": [
+		"campaign/snakepit.json"
+	]
+}

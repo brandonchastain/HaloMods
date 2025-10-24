@@ -1,0 +1,28 @@
+{
+	"MapGuid": "add6cb78-a2eb-4faa-a4cd-5a55b08feb48",
+	"ScenarioFile": "snakepit",
+	"Title": {
+		"Neutral": "Snakepit"
+	},
+	"Description": {
+		"Neutral": "Enter the snakepit."
+	},
+	"Images": {
+		"Large": "",
+		"Thumbnail": "",
+		"LoadingScreen": "",
+		"TopDown": ""
+	},
+	"Flags": [
+		"DisableSavedFilms"
+	],
+	"InsertionPoints": [],
+	"CampaignMapKind": "Default",
+	"CampaignMetagame": {
+		"IsNonScoring": false,
+		"MissionSegmentCount": 0,
+		"ParTimeInSeconds": 0.0,
+		"AverageTimeInSeconds": 0.0,
+		"MaxTimeInSeconds": 0.0
+	}
+}
