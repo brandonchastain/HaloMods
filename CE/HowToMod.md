@@ -1,12 +1,12 @@
 # Halo CE Modding Guide
 
 
-This is a basic guide for using Halo: Comps1 Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
+This is a basic guide for using Halo: Combat Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
 
 
 ## Tools you'll need
 
-1. Halo MCC with Comps1 Evolved from Steam
+1. Halo MCC with Combat Evolved from Steam
 2. Halo MCC CE mod tools from Steam
 3. (Optional) Blender for modeling 3D assets
 4. (Optional) Krita / Photoshop for editing textures
@@ -18,9 +18,9 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 * [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/) (reclaimers.net)
 * [Halo Modding Tips - Getting Started](https://steamcommunity.com/sharedfiles/filedetails/?id=2673977984) (steamcommunity.com)
-* Videos from YouTube channel **Halo: Comps1 Eclipsed** like [this one on spawning AI characters](https://www.youtube.com/watch?v=bs0h4vaCd-k) (youtube.com)
+* Videos from YouTube channel **Halo: Combat Eclipsed** like [this one on spawning AI characters](https://www.youtube.com/watch?v=bs0h4vaCd-k) (youtube.com)
 
----
+
 ## Halo Modding 101: Introduction to Concepts
 
 
@@ -58,7 +58,6 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 > TIP: To move the camera in Sapien, you must click and hold your middle mouse button first. Then you can move with WASD or drag the mouse to look around. Also, R=go Up, F=go Down.
 
 
----
 ## Halo Modding 201: Modding & testing a level
 
 ### Setup
@@ -69,7 +68,7 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 ```ps1
 cd Downloads\HaloMods\scripts
-.\Setup.ps1 ...
+.\Setup.ps1
 ```
 
 4. Shortcuts for Halo CE mod tools `guerilla.exe`, `sapien.exe`, and `halo_tag_test.exe` will be created under the HaloMods/ folder for easy access.
@@ -82,8 +81,8 @@ Also, the following directories will be added to the `HaloMods\CE` folder:
 
 ### 1. Create a new level or find one to modify
 
-
 #### Option A - Find an existing level
+
 1. Browse your Halo CE mod tool files for an existing .scenario tag to focus on. You can find them in the folder: `modtools\tags\levels\`. 
 2. Once you find a scenario you want to edit, you can move on to the next step.
 
@@ -121,7 +120,6 @@ map_name levels\test\yourlevel\yourlevel
 4. Have fun running around and testing your mods.
 
 
----
 ## Halo Modding 301: Testing your mod on MCC
 
 ### 1. Build the map file
@@ -143,7 +141,6 @@ When you're satisfied with your halo_tag_test.exe testing, compile a map file fo
 > Note: ALWAYS disable anti-cheat when testing your mods in MCC! If you get banned it's not my fault!
 
 
----
 ## Halo Modding 401: Publishing your mod to Steam Workshop
 
 1. Create a folder under /published/ with the mod name.
