@@ -1,14 +1,12 @@
 # Halo Mod Tool Utility Scripts
+A small suite of scripts to help Halo modders work quickly and stay organized.
 
 * Author: Brandon Chastain
 * Platform: Windows
 * Supported Games: Halo CE (more coming soon hopefully)
 
-## Description
 
-A small suite of scripts to help Halo modders work quickly and stay organized.
-
-## Script Suite Features
+## Features
 
 * Get quick access to your mod tools with automatically created shortcuts
 * Compile a map and apply it to MCC for testing
