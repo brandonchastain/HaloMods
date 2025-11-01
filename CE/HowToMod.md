@@ -8,9 +8,9 @@ This is a basic guide for using Halo: Combat Evolved mod tools along with some u
 * [Tools you'll need](#tools-youll-need)
 * [Supplemental Tutorials](#supplemental-tutorials)
 * [Halo Modding 101: Introduction to Concepts](#halo-modding-101-introduction-to-concepts)
-* [Halo Modding 102: Modding & testing a level](#halo-modding-201-modding--testing-a-level)
-* [Halo Modding 103: Testing your mod on MCC](#halo-modding-301-testing-your-mod-on-mcc)
-* [Halo Modding 104: Publishing your mod to Steam Workshop](#halo-modding-401-publishing-your-mod-to-steam-workshop)
+* [Halo Modding 102: Modding & testing a level](#halo-modding-102-modding--testing-a-level)
+* [Halo Modding 103: Testing your mod on MCC](#halo-modding-103-testing-your-mod-on-mcc)
+* [Halo Modding 104: Publishing your mod to Steam Workshop](#halo-modding-104-publishing-your-mod-to-steam-workshop)
 * [Notes for modeling levels in Blender](#notes-for-modeling-levels-in-blender)
 
 
