@@ -17,15 +17,15 @@ A small suite of scripts to help Halo modders work quickly and stay organized.
 
 |Script|Description|
 |---|---|
-|Setup.bat|Initializes the shortcuts for your modtools and official Halo install folders.|
-|GenerateScenario.bat|Generates a scenario tag from an exported blender model with tool.exe and runs lightmaps on it.|
-|BackupModData.bat|Backs up your `data/`, `tag/`, and `maps/` folders from the mod tools.|
-|RestoreModData.bat|Restores your mod tool `data/`, `tag/`, and `maps/` folders from the backup.|
-|BackupGameData.bat|Backs up the game's `maps/` folder.|
-|RestoreGameData.bat|Restores the game's `maps/` folder from the backup.|
-|BuildHaloMap.bat|Compiles a map cache file (`.map`) from a scenario tag file (`.scenario`) using tool.exe|
-|ApplyHaloMap.bat|Copies a custom map to the MCC game's `maps/` folder.|
-|Cleanup.bat|Uninstalls the shortcuts that were created.|
+|Setup.ps1|Initializes the shortcuts for your modtools and official Halo install folders.|
+|GenerateScenario.ps1|Generates a scenario tag from an exported blender model with tool.exe and runs lightmaps on it.|
+|BackupModData.ps1|Backs up your `data/`, `tag/`, and `maps/` folders from the mod tools.|
+|RestoreModData.ps1|Restores your mod tool `data/`, `tag/`, and `maps/` folders from the backup.|
+|BackupGameData.ps1|Backs up the game's `maps/` folder.|
+|RestoreGameData.ps1|Restores the game's `maps/` folder from the backup.|
+|BuildHaloMap.ps1|Compiles a map cache file (`.map`) from a scenario tag file (`.scenario`) using tool.exe|
+|ApplyHaloMap.ps1|Copies a custom map to the MCC game's `maps/` folder.|
+|Cleanup.ps1|Uninstalls the shortcuts that were created.|
 
 ## How to Use
 See [CE/HowToMod.md](CE/HowToMod.md)
