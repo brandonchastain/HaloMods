@@ -3,13 +3,24 @@
 
 This is a basic guide for using Halo: Combat Evolved mod tools along with some utility scripts that make it easy to apply & undo changes.
 
+## Table of Contents
+
+* [Tools you'll need](#tools-youll-need)
+* [Supplemental Tutorials](#supplemental-tutorials)
+* [Halo Modding 101: Introduction to Concepts](#halo-modding-101-introduction-to-concepts)
+* [Halo Modding 102: Modding & testing a level](#halo-modding-201-modding--testing-a-level)
+* [Halo Modding 103: Testing your mod on MCC](#halo-modding-301-testing-your-mod-on-mcc)
+* [Halo Modding 104: Publishing your mod to Steam Workshop](#halo-modding-401-publishing-your-mod-to-steam-workshop)
+* [Notes for modeling levels in Blender](#notes-for-modeling-levels-in-blender)
+
+
+---
 
 ## Tools you'll need
 
-1. Halo MCC with Combat Evolved from Steam
-2. Halo MCC CE mod tools from Steam
-3. (Optional) Blender for modeling 3D assets
-4. (Optional) Krita / Photoshop for editing textures
+* Halo MCC w/ Combat Evolved and mod tools
+* Blender (optional)
+* Photoshop or GIMP (optional)
 
 
 ## Supplemental Tutorials
@@ -59,7 +70,7 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 > TIP: To move the camera in Sapien, you must click and hold your middle mouse button first. Then you can move with WASD or drag the mouse to look around. Also, R=go Up, F=go Down.
 
 
-## Halo Modding 201: Modding & testing a level
+## Halo Modding 102: Modding & testing a level
 
 ### Setup
 
@@ -121,7 +132,7 @@ map_name levels\test\yourlevel\yourlevel
 4. Have fun running around and testing your mods.
 
 
-## Halo Modding 301: Testing your mod on MCC
+## Halo Modding 103: Testing your mod on MCC
 
 ### 1. Build the map file
 
@@ -142,7 +153,7 @@ When you're satisfied with your halo_tag_test.exe testing, compile a map file fo
 > Note: ALWAYS disable anti-cheat when testing your mods in MCC! If you get banned it's not my fault!
 
 
-## Halo Modding 401: Publishing your mod to Steam Workshop
+## Halo Modding 104: Publishing your mod to Steam Workshop
 
 1. Create a folder under `published\` with the mod name.
 2. Create 3 child folders under that: `images\`, `multiplayer\`, and `maps\`
