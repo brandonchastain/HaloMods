@@ -28,17 +28,18 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 * A "tag" is just a file with some settings inside that affect what the Halo game engine executes.
 * This is our main interface for customizing Halo behavior.
-* There are tags for most "things" in Halo, including scenarios, weapons, items, scenery, allies/enemies, and more.
+* There are tags for most "things" in Halo, including scenarios, weapons, items, scenery, allies\enemies, and more.
 * You can edit all tags with Guerilla.exe.
 * All the existing tags can be found in `modtools\tags\`.
 
 
 ### .scenario tag files
 
-* The tag file for a level, including its vehicles, scenery, items, AI/chars, etc. 
-* You can edit a .scenario file using `modtools\sapien.exe`.
+* The scenario tag is the main tag for each level in Halo
+* Scenario tags reference many other tags for the vehicles, scenery, items, AI, etc that are in the level.
+* You can edit a .scenario file using the `sapien.exe` shortcut in the `HaloMods\` folder.
 * All the existing .scenario tags can be found in `modtools\tags\levels\`. MP maps are under `modtools\tags\levels\test\`.
-* You can quickly test your .scenario files as you edit them using `modtools\halo_tag_test.exe`.
+* You can quickly test your .scenario files after saving them using the `halo_tag_test.exe` shortcut in the `HaloMods\` folder. More on that in section 201.
 
 
 ### HSC scripts
@@ -53,7 +54,7 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 ### Sapien.exe
 
-* Halo CE scenario editor - place new objects/enemies, change scenery, move things around in a level.
+* Halo CE scenario editor - place new objects\enemies, change scenery, move things around in a level.
 
 > TIP: To move the camera in Sapien, you must click and hold your middle mouse button first. Then you can move with WASD or drag the mouse to look around. Also, R=go Up, F=go Down.
 
@@ -64,14 +65,14 @@ I'm trying to make this guide easy to understand. However, it is by no means a c
 
 1. Clone this repo or download it from this page. 
 2. Open cmd or Powershell. Navigate to the downloaded scripts folder using `cd`. 
-3. Run `Setup.ps1` to initialize. It will ask for your modtools directory and halo1 game directory.
+3. Run `Setup.ps1` to initialize. It will ask for your modtools directory and your halo1 game directory with suggested values.
 
 ```ps1
 cd Downloads\HaloMods\scripts
 .\Setup.ps1
 ```
 
-4. Shortcuts for Halo CE mod tools `guerilla.exe`, `sapien.exe`, and `halo_tag_test.exe` will be created under the HaloMods/ folder for easy access.
+4. Shortcuts for Halo CE mod tools `guerilla.exe`, `sapien.exe`, and `halo_tag_test.exe` will be created under the top-most `HaloMods\` folder for easy access.
 Also, the following directories will be added to the `HaloMods\CE` folder:
 * `modtools\` - a symlink to HCEEK folder
 * `gameConfig\` - a symlink to halo1 folder under steam
@@ -88,7 +89,7 @@ Also, the following directories will be added to the `HaloMods\CE` folder:
 
 #### Option B - Create a new level (requires Blender)
 
-1. Create a model for the level in Blender.  (see [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level/))
+1. Create a model for the level in Blender.  (see [Creating your first Halo level](https://c20.reclaimers.net/h1/guides/levels/box-level))
 2. Export the model as a JSM file to `modtools\data\levels\test\yourlevel\models` folder.
 3. Run `GenerateScenario.ps1 levels\test\yourlevel` to generate a scenario tag from your model. The generated scenario will be stored at  `modtools\tags\levels\test\yourlevel\yourlevel.scenario`. 
 4. If there are console errors, check the BSP troubleshooting section below. Otherwise you should now have a scenario file.
@@ -98,11 +99,11 @@ Also, the following directories will be added to the `HaloMods\CE` folder:
 ### 2. Customize spawn points, objects, vehicles, weapons, etc, in a level
 
 1. Open the `sapien.exe` shortcut from your `HaloMods` folder and open the scenario you want to edit, e.g. `modtools\tags\levels\test\beavercreek\beavercreek.scenario`
-1. For new levels only, place 3 spawn points minimum for testing:
+2. For new levels only, place 3 spawn points minimum for testing:
 * Single Player spawn points should have default spawn point settings
 * Multiplayer spawn points need to be enabled for `all games` and be given team index 0 or 1.
-2. Use Sapien to populate the level with scenery, weapons, objects, AI, etc.
-3. Customize any tags you want using Guerilla.
+3. Use Sapien to populate the level with scenery, weapons, objects, AI, etc.
+4. Customize any tags you want using Guerilla.
 
 
 ### 3. Test your modded map with tag test
@@ -126,29 +127,31 @@ map_name levels\test\yourlevel\yourlevel
 
 When you're satisfied with your halo_tag_test.exe testing, compile a map file for the real game to use.
 
-1. Run `BuildMap.ps1 levels\test\yourlevel\yourlevel`, providing the path to your modded scenario (without the file extension).
+1. Run `CompileMap.ps1 levels\test\yourlevel\yourlevel`, providing the path to your modded scenario (without the file extension).
 2. The compiled .map file will be generated in `modtools\maps`.
 
 
 ### 2. Apply a map to MCC (*note the risks)
 
-> Note: BEFORE doing this, the script will back up your MCC maps using .\BackupMaps.ps1. You'll need to restore them before you jump back in to matchmaking.
+> Note: BEFORE doing this, the script will back up your MCC maps using .\BackupGameData.ps1. You'll need to restore them before you jump back in to matchmaking.
 
 1. Run `ApplyMap.ps1 levels\test\yourlevel\yourlevel beavercreek` to override the ps1tle creek map with your modded map. You can now play on the map. 
 2. Open MCC __with anti-cheat disabled__ to play the map on customs (only matters for host).
-3. You can restore the maps to their original state by running `RestoreMaps.ps1`. Make sure to do this before playing the game with anti-cheat enabled.
+3. You can restore the maps to their original state by running `RestoreGameData.ps1`. Make sure to do this before playing the game with anti-cheat enabled.
 
 > Note: ALWAYS disable anti-cheat when testing your mods in MCC! If you get banned it's not my fault!
 
 
 ## Halo Modding 401: Publishing your mod to Steam Workshop
 
-1. Create a folder under /published/ with the mod name.
-2. Create folders for /images/, /multiplayer/, and /maps/
-3. Copy your modded .map file from `\modtools\maps\` into the new `/published/maps/` folder.
-4. Open Excission (mod upload tool), make sure you add the  /published/ folder under configuration.
-5. Use Excission to create the new mod entry, add the map to it, and upload.
-6. You should see the mod in Steam Workshop now. It will be private by default and only visible by you.
+1. Create a folder under `published\` with the mod name.
+2. Create 3 child folders under that: `images\`, `multiplayer\`, and `maps\`
+3. Open Excission (mod upload tool), make sure you add the  \published\ folder under configuration.
+4. Use Excission to create the new mod entry, save. Then, add the map to it, save again.
+5. Copy your modded .map file from `\modtools\maps\` into the new `\published\maps\` folder.
+6. Go back to Excission, now you can upload the mod.
+
+You should see the mod in Steam Workshop now. It will be private by default and only visible to you until you change that.
 
 
 ## Notes for modeling levels in Blender
@@ -159,7 +162,7 @@ When you're satisfied with your halo_tag_test.exe testing, compile a map file fo
 ### Importing original BSP models and textures
 
 Get blender assets here on [g drive](https://drive.google.com/drive/folders/1E9S4sesK9B_6AHdLRfhzXw_lNQQvMqic)
-1. Import the obj w/materials file into blender. Apply scaling options in the Import Dialog to fix the size of the level.
+1. Import the obj w\materials file into blender. Apply scaling options in the Import Dialog to fix the size of the level.
 2. Add a frame, parent the frame over the imported structure.
 3. You may need to rename materials inside the .blend file to match the shader name. (add ! for transparency, %^ for ladders, etc).
 
@@ -181,9 +184,9 @@ After modeling a new base or anything else that will be attached to the `level` 
 
 The advanced tutorial on reclaimers has info on this, but it has an incorrect step. 
 
-FIRST, apply all transforms to the structure/object. In Object mode, select the object and go to Object -> Apply -> All Transforms.
+FIRST, apply all transforms to the structure\object. In Object mode, select the object and go to Object -> Apply -> All Transforms.
 
-Follow the advanced tutorial to apply the Union modifier to the Level object (with the base/structure).
+Follow the advanced tutorial to apply the Union modifier to the Level object (with the base\structure).
 
 When applying the Union modifier, select Material: Transfer to keep identitifying materials on a base.
 
@@ -199,7 +202,7 @@ Check for non-manifold edges. From edge edit mode, click Select -> All by trait 
 
 If there are non-manifold edges, connect them (if it's obviously disconnected).
 Check the normal face (enable backface culling on the material for an easier way to tell). These must be correct for the edges to be manifold.
-If it's not obvious, it could be a duplicated face/object.
+If it's not obvious, it could be a duplicated face\object.
 Check the specific error given by Tool.exe and look it up on the BSP troubleshooting guide.
 
 Once you've cleaned up the non-manifold edges, you can separate the structure again by highlighting all the structure faces and pressing P, S to separate it into a different object.

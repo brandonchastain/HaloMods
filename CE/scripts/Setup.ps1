@@ -8,16 +8,16 @@ if (Test-Path "$PSScriptRoot\..\gameConfig") {
 }
 
 # Prompt user for their modtools folder
-$modtoolsPath = Read-Host "Enter the full path to your modtools folder (e.g. C:\SteamLibrary\steamapps\common\HCEEK)"
-if (-not (Test-Path "$modtoolsPath\tags")) {
-    Write-Error "Error: The specified modtools path does not contain a tags folder. Please check the path and try again."
+$modtoolsPath = Read-Host "Enter the full path to your modtools folder (e.g. C:\Program Files (x86)\Steam\steamapps\common\HCEEK or D:\SteamLibrary\steamapps\common\HCEEK)"
+if (-not (Test-Path "$modtoolsPath\sapien.exe")) {
+    Write-Error "Error: The specified modtools path does not contain sapien.exe. Please check the path and try again."
     exit 1
 }
 
 # Prompt user for their gameConfig folder
-$gameConfigPath = Read-Host "Enter the full path to your gameConfig folder (e.g. D:\SteamLibrary\steamapps\common\Halo The Master Chief Collection\halo1)"
-if (-not (Test-Path "$gameConfigPath\maps")) {
-    Write-Error "Error: The specified gameConfig path does not contain a maps folder. Please check the path and try again."
+$gameConfigPath = Read-Host "Enter the full path to your gameConfig folder (e.g. C:\Program Files (x86)\Steam\steamapps\common\Halo The Master Chief Collection\halo1 or D:\SteamLibrary\steamapps\common\Halo The Master Chief Collection\halo1)"
+if (-not (Test-Path "$gameConfigPath\halo1.dll")) {
+    Write-Error "Error: The specified gameConfig path does not contain a halo1.dll file. Please check the path and try again."
     exit 1
 }
 
@@ -52,6 +52,7 @@ foreach ($shortcut in $shortcuts) {
     $WshShell = New-Object -ComObject WScript.Shell
     $shortcutObject = $WshShell.CreateShortcut($shortcutPath)
     $shortcutObject.TargetPath = $targetPath
+    $shortcutObject.WorkingDirectory = $modtoolsPath
     $shortcutObject.Save()
 }
 

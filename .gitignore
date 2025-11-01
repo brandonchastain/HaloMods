@@ -1,5 +1,9 @@
 */modtools
 */gameConfig
-*/maps_backup
+*/backups
 */extracted_levels
 **/**.map
+*.txt
+*.cfg
+*.lnk
+*.url

@@ -1,14 +1,14 @@
 {
 	"ModIdentifier": {
-		"ModGuid": "85d6d129-e01a-4333-b646-7b1521c1ed58",
+		"ModGuid": "566014f8-c99a-452e-9d24-ee0e012d5d28",
 		"HostedModIds": {
-			"SteamWorkshopId": 3590580739
+			"SteamWorkshopId": 3594317630
 		}
 	},
 	"ModVersion": {
 		"Major": 0,
 		"Minor": 0,
-		"Patch": 1
+		"Patch": 0
 	},
 	"MinAppVersion": {
 		"Major": 1,
@@ -22,10 +22,7 @@
 	},
 	"Engine": "Halo1",
 	"Title": {
-		"Neutral": "Snakepit"
-	},
-	"Description": {
-		"Neutral": "Arcade-style waves of enemies"
+		"Neutral": "AlexMap"
 	},
 	"InheritSharedFiles": "FromMCC",
 	"ModContents": {
@@ -34,8 +31,11 @@
 	},
 	"GameModContents": {
 		"HasSharedFiles": false,
-		"HasCampaign": true,
+		"HasCampaign": false,
 		"HasSpartanOps": false,
-		"HasController": false
+		"HasController": false,
+		"MultiplayerMaps": [
+			"multiplayer/alexmap.json"
+		]
 	}
 }

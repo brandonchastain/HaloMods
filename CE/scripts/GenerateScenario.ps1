@@ -15,6 +15,9 @@ try {
     
     # Generate lightmaps
     & .\tool.exe lightmaps "$dataPath\$scenarioName" $scenarioName 0 1
+
+    # TODO: hud messages if exist
+    # TODO: unicode strings if exist
 }
 finally {
     Set-Location $currentLocation

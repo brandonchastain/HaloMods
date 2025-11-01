@@ -5,9 +5,9 @@ param(
     [string]$originalMapName
 )
 
-# Run BackupMaps.ps1 to backup existing maps if maps_backup\maps_backup.zip file does not exist
-if (-not (Test-Path "$PSScriptRoot\..\maps_backup\maps_backup.zip")) {
-    & "$PSScriptRoot\BackupMaps.ps1"
+# Run BackupGameData.ps1 to backup existing maps if backups \game_data_backup.zip file does not exist
+if (-not (Test-Path "$PSScriptRoot\..\backups\game_data_backup.zip")) {
+    & "$PSScriptRoot\BackupGameData.ps1"
 }
 
 # Validate that the modded map exists
