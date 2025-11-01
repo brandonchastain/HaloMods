@@ -8,9 +8,12 @@
 
 A small suite of scripts to help Halo modders work quickly and stay organized.
 
-* Automatically creates shortcuts to provide easy access to your mod tools and official game files.
-* Backs up and restores the official .map files.
-* Various wrappers for tool.exe with a more consistent interface.
+## Script Suite Features
+
+* Get quick access to your mod tools with automatically created shortcuts
+* Compile a map and apply it to MCC for testing
+* Backup and restore your modded `data`, `tags`, and `maps`
+* Backup and restore the official game `maps`
 
 ## Included Scripts
 
@@ -23,7 +26,7 @@ A small suite of scripts to help Halo modders work quickly and stay organized.
 |BackupGameData.bat|Backs up the game's `maps/` folder.|
 |RestoreGameData.bat|Restores the game's `maps/` folder from the backup.|
 |BuildHaloMap.bat|Compiles a map cache file (`.map`) from a scenario tag file (`.scenario`) using tool.exe|
-|ApplyHaloMap.bat|Copies a custom map to the game's `maps/` folder for MCC testing.|
+|ApplyHaloMap.bat|Copies a custom map to the MCC game's `maps/` folder.|
 |Cleanup.bat|Uninstalls the shortcuts that were created.|
 
 ## How to Use
