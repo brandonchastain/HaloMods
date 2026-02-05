@@ -14,7 +14,7 @@ try {
     & .\tool.exe structure $dataPath $scenarioName
     
     # Generate lightmaps
-    & .\tool.exe lightmaps "$dataPath\$scenarioName" $scenarioName 0 1
+    & .\tool.exe lightmaps "$dataPath\$scenarioName" $scenarioName 1 0.1
 
     # TODO: hud messages if exist
     # TODO: unicode strings if exist

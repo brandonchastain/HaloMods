@@ -5,12 +5,12 @@
 		"Neutral": "Snakepit"
 	},
 	"Description": {
-		"Neutral": "Enter the snakepit."
+		"Neutral": "Built in 2551 to train the next generation of Spartans, this remote base sports a cutting-edge holographic battle simulation system. The facility has not been utilized since reallocation of personnel during the conflict on Reach."
 	},
 	"Images": {
-		"Large": "",
-		"Thumbnail": "",
-		"LoadingScreen": "",
+		"Large": "Snakepit_small.png",
+		"Thumbnail": "Snakepit_small.png",
+		"LoadingScreen": "Snakepit.png",
 		"TopDown": ""
 	},
 	"Flags": [
