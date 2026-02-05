@@ -7,6 +7,7 @@ import requests
 fetch_big_steam_collection.py
 
 How to use:
+0. Replace STEAM_API_KEY with your actual Steam API key if required.
 1. If you find a collection that appears empty in Steam, view the URL and copy the collection ID at the end.
 2. Run this script, providing the collection ID as an argument.
 
@@ -31,7 +32,8 @@ def fetch_collection_from_api(collection_id):
     """Fetch a Steam collection from the API and extract all child publishedfileids."""
     payload = {
         "collectioncount": 1,
-        "publishedfileids[0]": collection_id
+        "publishedfileids[0]": collection_id,
+        "key": "STEAM_API_KEY"  # Replace with your actual Steam API key if required
     }
     
     response = requests.post(COLLECTION_API, data=payload)
