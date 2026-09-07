@@ -1,14 +1,14 @@
 {
-	"MapGuid": "add6cb78-a2eb-4faa-a4cd-5a55b08feb48",
-	"ScenarioFile": "snakepit",
+	"MapGuid": "239d87ec-fd6e-49de-b1f3-6e69f722b230",
+	"ScenarioFile": "levels/test/snakepit/snakepit",
 	"Title": {
 		"Neutral": "Snakepit"
 	},
 	"Description": {
-		"Neutral": "Built in 2551 to train the next generation of Spartans, this remote base sports a cutting-edge holographic battle simulation system. The facility has not been utilized since reallocation of personnel during the conflict on Reach."
+		"Neutral": "Built initially in 2551 to train the next generation of Spartans, this remote base sports a cutting-edge holographic battle simulation system.\n\nFight through arcade-style waves of classic Halo enemies in a small arena.\nSurvive and be rewarded!"
 	},
 	"Images": {
-		"Large": "Snakepit_small.png",
+		"Large": "Snakepit.png",
 		"Thumbnail": "Snakepit_small.png",
 		"LoadingScreen": "Snakepit.png",
 		"TopDown": ""

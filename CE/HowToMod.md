@@ -158,9 +158,14 @@ When you're satisfied with your halo_tag_test.exe testing, compile a map file fo
 1. Create a folder under `published\` with the mod name.
 2. Create 3 child folders under that: `images\`, `multiplayer\`, and `maps\`
 3. Open Excission (mod upload tool), make sure you add the  \published\ folder under configuration.
-4. Use Excission to create the new mod entry, save. Then, add the map to it, save again.
-5. Copy your modded .map file from `\modtools\maps\` into the new `\published\maps\` folder.
-6. Go back to Excission, now you can upload the mod.
+4. Use Excission to create the new mod entry, (add your campaign and mission), save. 
+5. When specifying scenario tag name, specify the path e.g. `levels/test/snakepit/snakepit`.
+6. Save (ctrl+s) on all the tabs.
+7. Copy your modded .map file from `\modtools\maps\` into the new `\published\<modTitle>\maps\` folder.
+8. To validate your mod settings, close and re-open Excession and check that your mod doesn't have any errors reported at the bottom of the window, such as "Could not resolve Campaign Cache File" or "Could not resolve Muliplayer Cache File". See the image below.
+9. After validating, now you can upload the mod by clicking Excession's UPLOAD button.
+
+![alt text](image-1.png)
 
 You should see the mod in Steam Workshop now. It will be private by default and only visible to you until you change that.
 

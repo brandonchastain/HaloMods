@@ -1,16 +1,10 @@
 {
-	"CampaignGuid": "c7fe53d4-637b-4863-ace3-a56154283ec1",
+	"CampaignGuid": "3e9cff72-9862-4922-a963-7b1a039be6e5",
 	"Title": {
 		"Neutral": "Snakepit"
 	},
 	"Description": {
-		"Neutral": "ENTER THE SNAKEPIT
-
-(Campaign - Firefight Arena)
-
-Built initially in 2551 to train the next generation of Spartans, this remote base sports a cutting-edge holographic battle simulation system. It briefly boosted UNSC recruitment before training resources were reallocated after the conflict on Reach.
-
-Fight through arcade-style waves of classic Halo enemies in a small arena. Survive, and be rewarded."
+		"Neutral": "ENTER THE SNAKEPIT\n\n(Campaign - Firefight Arena)\n\nBuilt initially in 2551 to train the next generation of Spartans, this remote base sports a cutting-edge holographic battle simulation system.\n\nFight through arcade-style waves of classic Halo enemies in a small arena.\nSurvive and be rewarded!"
 	},
 	"CampaignMaps": [
 		"campaign/snakepit.json"
