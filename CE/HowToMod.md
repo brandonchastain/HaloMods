@@ -146,7 +146,7 @@ When you're satisfied with your halo_tag_test.exe testing, compile a map file fo
 
 > Note: BEFORE doing this, the script will back up your MCC maps using .\BackupGameData.ps1. You'll need to restore them before you jump back in to matchmaking.
 
-1. Run `ApplyMap.ps1 levels\test\yourlevel\yourlevel beavercreek` to override the ps1tle creek map with your modded map. You can now play on the map. 
+1. Run `ApplyMap.ps1 levels\test\yourlevel\yourlevel a10` (campaign) or `ApplyMap.ps1 levels\test\yourlevel\yourlevel beavercreek` (multiplayer) to override the beavercreek map with your modded map. You can now play on the map. 
 2. Open MCC __with anti-cheat disabled__ to play the map on customs (only matters for host).
 3. You can restore the maps to their original state by running `RestoreGameData.ps1`. Make sure to do this before playing the game with anti-cheat enabled.
 
